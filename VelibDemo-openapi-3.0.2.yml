@@ -1,0 +1,870 @@
+#  ___ _            _ _    _ _    __
+# / __(_)_ __  _ __| (_)__(_) |_ /_/
+# \__ \ | '  \| '_ \ | / _| |  _/ -_)
+# |___/_|_|_|_| .__/_|_\__|_|\__\___|
+#             |_| Module: VelibDemo 4.0
+components:
+  schemas:
+    Error404:
+      type: object
+      properties:
+        error:
+          description: Error message
+          type: string
+        status:
+          description: Error status
+          type: integer
+          enum:
+          - 404
+    VelibStation:
+      type: object
+      properties:
+        velibStaComments:
+          description: Comments
+          type: string
+        velibStaName:
+          description: Station name
+          type: string
+        velibStaCoordinates:
+          description: Station coordinates
+          type: string
+        velibStaMonitoring:
+          description: Monitoring?
+          type: boolean
+        row_id:
+          description: Unique technical row ID
+          type: string
+        velibStaCode:
+          description: Station code
+          type: string
+        velibStaStatus:
+          description: Station status
+          type: string
+          enum:
+          - OPERATIVE
+          - WORKINPROGRESS
+          - CLOSE
+        velibStaBikes:
+          description: Number of available bikes
+          type: integer
+        velibStaFreeDocks:
+          description: Number of free docks
+          type: integer
+        velibStaRating:
+          description: Rating
+          type: number
+    ActionResult:
+      type: object
+      properties:
+        result:
+          description: Action result
+          type: string
+    ArrayOfVelibStation:
+      type: array
+      items:
+        $ref: '#/components/schemas/VelibStation'
+    TreeviewData:
+      type: object
+      properties:
+        item:
+          description: Object item with lists of linked objects' items
+          type: object
+    PublicationResult:
+      type: object
+      properties:
+        mime:
+          description: MIME type
+          type: string
+        content:
+          description: Content (plain text or base64 encoded)
+          type: string
+    Error400:
+      type: object
+      properties:
+        error:
+          description: Error message
+          type: string
+        status:
+          description: Error status
+          type: integer
+          enum:
+          - 400
+    ArrayOfVelibComment:
+      type: array
+      items:
+        $ref: '#/components/schemas/VelibComment'
+    Error401:
+      type: object
+      properties:
+        error:
+          description: Error message
+          type: string
+        status:
+          description: Error status
+          type: integer
+          enum:
+          - 401
+    Error500:
+      type: object
+      properties:
+        error:
+          description: Error message
+          type: string
+        status:
+          description: Error status
+          type: integer
+          enum:
+          - 500
+    VelibComment:
+      type: object
+      properties:
+        velibCmtEval:
+          description: Evaluation
+          type: integer
+        velibCmtStaId__velibStaCode:
+          description: Station code
+          type: string
+        velibCmtName:
+          description: Name
+          type: string
+        velibCmtComments:
+          description: Comments
+          type: string
+        velibCmtDateTime:
+          description: Date/time
+          type: string
+        row_id:
+          description: Unique technical row ID
+          type: string
+        velibCmtVisible:
+          description: Visible?
+          type: boolean
+        velibCmtStaId__velibStaName:
+          description: Station name
+          type: string
+        velibCmtStaId:
+          description: Station
+          type: string
+    Error403:
+      type: object
+      properties:
+        error:
+          description: Error message
+          type: string
+        status:
+          description: Error status
+          type: integer
+          enum:
+          - 403
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http
+    bearerAuth:
+      bearerFormat: Simplicite token
+      scheme: bearer
+      type: http
+openapi: 3.0.2
+paths:
+  /login:
+    get:
+      summary: Login (obtain bearer token)
+      security:
+      - basicAuth: []
+      operationId: login
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json: {}
+            text/plain: {}
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+      parameters:
+      - schema:
+          type: string
+          enum:
+          - json
+          - oauth2
+          - token
+        in: query
+        name: _output
+        description: Optional output format
+        required: false
+      tags:
+      - session
+  /logout:
+    get:
+      summary: Logout (revoke bearer token)
+      security:
+      - bearerAuth: []
+      operationId: logout
+      responses:
+        '200':
+          description: Successfull logout
+          content:
+            application/json: {}
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+      tags:
+      - session
+  /rest/VelibComment:
+    get:
+      summary: Search VelibComment business object records or get contextualized metadata
+      security:
+      - bearerAuth: []
+      operationId: obj-velibcomment-search
+      responses:
+        '200':
+          description: Success in searching business object records (or in getting
+            contextualized business object metadata, documentation, ...)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfVelibComment'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+      parameters:
+      - schema:
+          type: boolean
+        in: query
+        name: _metadata
+        description: Metadata?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _count
+        description: Count?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _doc
+        description: Documentation?
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: velibCmtDateTime
+        description: Search filter for Date/time
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: velibCmtName
+        description: Search filter for Name
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: velibCmtStaId
+        description: Search filter for Station
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: velibCmtStaId__velibStaCode
+        description: Search filter for Station code
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: velibCmtStaId__velibStaName
+        description: Search filter for Station name
+        required: false
+      - schema:
+          type: integer
+        in: query
+        name: velibCmtEval
+        description: Search filter for Evaluation
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: velibCmtComments
+        description: Search filter for Comments
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: velibCmtVisible
+        description: Search filter for Visible?
+        required: false
+      tags:
+      - VelibComment
+  /rest/VelibComment/{row_id}:
+    post:
+      summary: Create a new VelibCommentbusiness object record
+      security:
+      - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VelibComment'
+      operationId: obj-velibcomment-create
+      responses:
+        '200':
+          description: Success in creating a new business object record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VelibComment'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        required: true
+      tags:
+      - VelibComment
+    get:
+      summary: Get a VelibComment business object record
+      security:
+      - bearerAuth: []
+      operationId: obj-velibcomment-get
+      responses:
+        '200':
+          description: Success in getting a single business object record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VelibComment'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        required: true
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_documents
+        description: Inline documents?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_objects
+        description: Inline objects?
+        required: false
+      tags:
+      - VelibComment
+    delete:
+      summary: Delete a VelibComment business object record
+      security:
+      - bearerAuth: []
+      operationId: obj-velibcomment-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+          content:
+            application/json: {}
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        required: true
+      tags:
+      - VelibComment
+    put:
+      summary: Update a VelibCommentbusiness object record
+      security:
+      - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VelibComment'
+      operationId: obj-velibcomment-update
+      responses:
+        '200':
+          description: Success in updating a business object record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VelibComment'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        required: true
+      tags:
+      - VelibComment
+  /rest/VelibStation/{row_id}:
+    post:
+      summary: Create a new VelibStationbusiness object record
+      security:
+      - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VelibStation'
+      operationId: obj-velibstation-create
+      responses:
+        '200':
+          description: Success in creating a new business object record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VelibStation'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        required: true
+      tags:
+      - VelibStation
+    get:
+      summary: Get a VelibStation business object record
+      security:
+      - bearerAuth: []
+      operationId: obj-velibstation-get
+      responses:
+        '200':
+          description: Success in getting a single business object record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VelibStation'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        required: true
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_documents
+        description: Inline documents?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_objects
+        description: Inline objects?
+        required: false
+      tags:
+      - VelibStation
+    delete:
+      summary: Delete a VelibStation business object record
+      security:
+      - bearerAuth: []
+      operationId: obj-velibstation-delete
+      responses:
+        '200':
+          description: Success in deleting a business object record
+          content:
+            application/json: {}
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        required: true
+      tags:
+      - VelibStation
+    put:
+      summary: Update a VelibStationbusiness object record
+      security:
+      - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VelibStation'
+      operationId: obj-velibstation-update
+      responses:
+        '200':
+          description: Success in updating a business object record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VelibStation'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        required: true
+      tags:
+      - VelibStation
+  /:
+    get:
+      summary: Get user session information
+      security:
+      - bearerAuth: []
+      operationId: info
+      responses:
+        '200':
+          description: Success in getting user session information
+          content:
+            application/json: {}
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+      parameters:
+      - schema:
+          type: boolean
+        in: query
+        name: texts
+        description: Texts?
+        required: false
+      tags:
+      - session
+  /rest/VelibStation:
+    get:
+      summary: Search VelibStation business object records or get contextualized metadata
+      security:
+      - bearerAuth: []
+      operationId: obj-velibstation-search
+      responses:
+        '200':
+          description: Success in searching business object records (or in getting
+            contextualized business object metadata, documentation, ...)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfVelibStation'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+      parameters:
+      - schema:
+          type: boolean
+        in: query
+        name: _metadata
+        description: Metadata?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _count
+        description: Count?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _doc
+        description: Documentation?
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: _indexsearch
+        description: Index search query
+        required: false
+      - schema:
+          type: string
+          enum:
+          - VelibStation
+        in: query
+        name: _crosstab
+        description: Apply pivot table
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _crosstabcubes
+        description: Pivot table data as cubes?
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: velibStaCode
+        description: Search filter for Station code
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: velibStaName
+        description: Search filter for Station name
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: velibStaCoordinates
+        description: Search filter for Station coordinates
+        required: false
+      - schema:
+          type: string
+          enum:
+          - OPERATIVE
+          - WORKINPROGRESS
+          - CLOSE
+        in: query
+        name: velibStaStatus
+        description: Search filter for Station status
+        required: false
+      - schema:
+          type: integer
+        in: query
+        name: velibStaBikes
+        description: Search filter for Number of available bikes
+        required: false
+      - schema:
+          type: integer
+        in: query
+        name: velibStaFreeDocks
+        description: Search filter for Number of free docks
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: velibStaMonitoring
+        description: Search filter for Monitoring?
+        required: false
+      - schema:
+          type: number
+        in: query
+        name: velibStaRating
+        description: Search filter for Rating
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: velibStaComments
+        description: Search filter for Comments
+        required: false
+      tags:
+      - VelibStation
+info:
+  license:
+    name: Simplicite license
+    url: http://www.simplicitesoftware.com
+  contact:
+    name: Simplicite Software
+    url: http://www.simplicitesoftware.com
+    email: contact@simplicitesoftware.com
+  description: API for module VelibDemo
+  title: VelibDemo
+  version: '4.0'
+tags:
+- name: VelibComment
+  description: User comment
+- name: VelibStation
+  description: Station
