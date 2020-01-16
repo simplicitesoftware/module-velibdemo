@@ -1640,7 +1640,7 @@ There is one system parameters to configure:
 		<act_confirm_expr/>
 		<act_confirm_ui/>
 		<act_plus>0</act_plus>
-		<act_comment/>
+		<act_comment><![CDATA[Refresh all stations]]></act_comment>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
 		<act_exec>BCK</act_exec>
 		<act_count/>
@@ -1654,12 +1654,12 @@ There is one system parameters to configure:
 		<act_method>refreshMonitored</act_method>
 		<act_script/>
 		<act_url/>
-		<act_image/>
+		<act_image>reload</act_image>
 		<act_confirm>0</act_confirm>
 		<act_confirm_expr/>
 		<act_confirm_ui/>
 		<act_plus>0</act_plus>
-		<act_comment/>
+		<act_comment><![CDATA[Refresh monitored stations]]></act_comment>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
 		<act_exec>BCK</act_exec>
 		<act_count/>
@@ -1678,7 +1678,7 @@ There is one system parameters to configure:
 		<act_confirm_expr/>
 		<act_confirm_ui/>
 		<act_plus>0</act_plus>
-		<act_comment/>
+		<act_comment><![CDATA[Refresh one station]]></act_comment>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
 		<act_exec>BCK</act_exec>
 		<act_count/>

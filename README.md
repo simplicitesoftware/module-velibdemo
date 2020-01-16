@@ -92,7 +92,7 @@ No custom action
 
 ### Custom actions
 
-* `VELIB_REFRESH_ALL`: 
-* `VELIB_REFRESH_MONITORED`: 
-* `VELIB_REFRESH_ONE`: 
+* `VELIB_REFRESH_ALL`: Refresh all stations
+* `VELIB_REFRESH_MONITORED`: Refresh monitored stations
+* `VELIB_REFRESH_ONE`: Refresh one station
 
