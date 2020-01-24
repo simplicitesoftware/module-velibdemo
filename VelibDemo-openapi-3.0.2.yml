@@ -52,7 +52,7 @@ components:
           type: integer
         velibStaRating:
           description: Rating
-          type: number
+          type: integer
     ActionResult:
       type: object
       properties:
@@ -839,7 +839,7 @@ paths:
         description: Search filter for Monitoring?
         required: false
       - schema:
-          type: number
+          type: integer
         in: query
         name: velibStaRating
         description: Search filter for Rating

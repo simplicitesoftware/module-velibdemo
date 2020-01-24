@@ -80,7 +80,7 @@ No custom action
 | `velibStaBikes`                                              | int(3)                                   |          |           |          | Number of available bikes                                                        |
 | `velibStaFreeDocks`                                          | int(3)                                   |          |           |          | Number of free docks                                                             |
 | `velibStaMonitoring`                                         | boolean                                  |          | yes       |          | Monitoring?                                                                      |
-| `velibStaRating`                                             | float(11, 2)                             |          | yes       |          | Rating                                                                           |
+| `velibStaRating`                                             | int(11)                                  |          | yes       |          | Rating                                                                           |
 | `velibStaComments`                                           | html(4000)                               |          | yes       |          | Comments                                                                         |
 
 ### Lists

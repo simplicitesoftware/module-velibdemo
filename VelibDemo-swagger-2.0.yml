@@ -573,7 +573,7 @@ paths:
       - in: query
         name: velibStaRating
         description: Search filter for Rating
-        type: number
+        type: integer
         required: false
       - in: query
         name: velibStaComments
@@ -637,7 +637,7 @@ definitions:
         type: integer
       velibStaRating:
         description: Rating
-        type: number
+        type: integer
   ActionResult:
     type: object
     properties:

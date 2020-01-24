@@ -331,7 +331,7 @@ There is one system parameters to configure:
 		<fld_copy>0</fld_copy>
 		<fld_size>4000</fld_size>
 		<fld_minsize/>
-		<fld_precision>hf=10</fld_precision>
+		<fld_precision>h=10</fld_precision>
 		<fld_fromdate_id.fld_name/>
 		<fld_dfault/>
 		<fld_indexable>0</fld_indexable>
@@ -525,7 +525,7 @@ There is one system parameters to configure:
 		<fld_updall>1</fld_updall>
 		<fld_case/>
 		<fld_righttoleft>0</fld_righttoleft>
-		<fld_rendering/>
+		<fld_rendering>SLIDE</fld_rendering>
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Visible?]]></fld_comment>
@@ -747,7 +747,7 @@ There is one system parameters to configure:
 		<fld_updall>1</fld_updall>
 		<fld_case/>
 		<fld_righttoleft>0</fld_righttoleft>
-		<fld_rendering/>
+		<fld_rendering>SLIDE</fld_rendering>
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Monitoring?]]></fld_comment>
@@ -805,14 +805,14 @@ There is one system parameters to configure:
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum>0</fld_listsum>
 		<fld_tray>0</fld_tray>
-		<fld_type>2</fld_type>
+		<fld_type>1</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>1</fld_copy>
 		<fld_size>11</fld_size>
 		<fld_minsize/>
-		<fld_precision>2</fld_precision>
+		<fld_precision>min=0 max=100</fld_precision>
 		<fld_fromdate_id.fld_name/>
 		<fld_dfault><![CDATA[0]]></fld_dfault>
 		<fld_indexable>0</fld_indexable>
@@ -821,7 +821,7 @@ There is one system parameters to configure:
 		<fld_updall>1</fld_updall>
 		<fld_case/>
 		<fld_righttoleft>0</fld_righttoleft>
-		<fld_rendering/>
+		<fld_rendering>SLIDE</fld_rendering>
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Rating]]></fld_comment>
@@ -914,19 +914,20 @@ There is one system parameters to configure:
   </div>
   <div class="field" data-field="velibCmtStaId"></div>
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-sm-3">
       <div class="field" data-field="velibCmtStaId__velibStaCode"></div>
     </div>
-    <div class="col-sm-5">
+    <div class="col-sm-4">
       <div class="field" data-field="velibCmtStaId__velibStaName"></div>
     </div>
-    <div class="col-sm-5">
+    <div class="col-sm-3">
       <div class="field" data-field="velibCmtEval"></div>
+    </div>
+    <div class="col-sm-2">
+      <div class="field" data-field="velibCmtVisible"></div>
     </div>
   </div>
   <div class="field" data-field="velibCmtComments"></div>
-  <div class="field" data-field="velibCmtCommentENU"></div>
-  <div class="field" data-field="velibCmtVisible"></div>
 </div>
 ]]></ofa_ui>
 		<ofa_icon/>
@@ -945,7 +946,6 @@ There is one system parameters to configure:
       <div class="field" data-field="velibStaName"></div>
     </div>
   </div>
-  <div class="field" data-field="velibStaContractName"></div>
   <div class="field" data-field="velibStaCoordinates"></div>
 </div>
 ]]></ofa_ui>
@@ -960,15 +960,12 @@ There is one system parameters to configure:
   <div class="field" data-field="velibStaStatus"></div>
   <div class="row">
     <div class="col-sm-6">
-      <div class="field" data-field="velibStaBonus"></div>
       <div class="field" data-field="velibStaBikes"></div>
     </div>
     <div class="col-sm-6">
-      <div class="field" data-field="velibStaBanking"></div>
       <div class="field" data-field="velibStaFreeDocks"></div>
     </div>
   </div>
-  <div class="field" data-field="velibStaLastUpdate"></div>
 </div>
 ]]></ofa_ui>
 		<ofa_icon/>
@@ -980,10 +977,10 @@ There is one system parameters to configure:
 		<ofa_title>1</ofa_title>
 		<ofa_ui><![CDATA[<div>
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-6">
       <div class="field" data-field="velibStaRating"></div>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-6">
       <div class="field" data-field="velibStaMonitoring"></div>
     </div>
   </div>
@@ -1574,7 +1571,7 @@ There is one system parameters to configure:
 	<data>
 		<obf_object_id.obo_name>VelibStation</obf_object_id.obo_name>
 		<obf_field_id.fld_name>velibStaRating</obf_field_id.fld_name>
-		<obf_field_id.fld_type>2</obf_field_id.fld_type>
+		<obf_field_id.fld_type>1</obf_field_id.fld_type>
 		<obf_order>3010</obf_order>
 		<obf_group_by/>
 		<obf_dfault_order/>
