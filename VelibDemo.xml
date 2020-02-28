@@ -6,7 +6,7 @@
 	<data>
 		<mdl_name>VelibDemo</mdl_name>
 		<mdl_version>4.0</mdl_version>
-		<mdl_prefix/>
+		<mdl_prefix>velib</mdl_prefix>
 		<mdl_url><![CDATA[{
 	"type": "git",
 	"origin": {
@@ -14,7 +14,7 @@
 	}
 }
 ]]></mdl_url>
-		<mdl_lastupd>2020-01-16 17:53:03</mdl_lastupd>
+		<mdl_lastupd>2020-02-28 12:55:08</mdl_lastupd>
 		<mdl_comment><![CDATA[### Introduction
 
 **Velib** demo.
@@ -1066,8 +1066,10 @@ There is one system parameters to configure:
 		<obo_btn_close>1</obo_btn_close>
 		<obo_tray>1</obo_tray>
 		<obo_dashboard>1</obo_dashboard>
-		<obo_prefix/>
+		<obo_prefix>cmt</obo_prefix>
 		<obo_search_ts/>
+		<obo_minrows/>
+		<obo_maxrows/>
 	</data>
 	<data>
 		<obo_name>VelibStation</obo_name>
@@ -1126,8 +1128,10 @@ There is one system parameters to configure:
 		<obo_btn_close>1</obo_btn_close>
 		<obo_tray>1</obo_tray>
 		<obo_dashboard>1</obo_dashboard>
-		<obo_prefix/>
+		<obo_prefix>sta</obo_prefix>
 		<obo_search_ts/>
+		<obo_minrows/>
+		<obo_maxrows/>
 	</data>
 </object>
 <object>

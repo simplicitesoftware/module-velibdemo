@@ -60,10 +60,6 @@ There is one system parameters to configure:
 | `velibCmtComments`                                           | html(4000)                               |          | yes       |          | Comments                                                                         |
 | `velibCmtVisible`                                            | boolean                                  |          | yes       |          | Visible?                                                                         |
 
-### Custom actions
-
-No custom action
-
 `VelibStation` business object definition
 -----------------------------------------
 
@@ -76,7 +72,7 @@ No custom action
 | `velibStaCode`                                               | char(11)                                 | yes*     |           |          | Station code                                                                     |
 | `velibStaName`                                               | char(100)                                |          |           |          | Station name                                                                     |
 | `velibStaCoordinates`                                        | geocoords                                |          |           |          | Station coordinates                                                              |
-| `velibStaStatus`                                             | enum(7) using `VELIB_STA_STATUS` list    |          |           |          | Station status                                                                   |
+| `velibStaStatus`                                             | enum(50) using `VELIB_STA_STATUS` list   |          |           |          | Station status                                                                   |
 | `velibStaBikes`                                              | int(3)                                   |          |           |          | Number of available bikes                                                        |
 | `velibStaFreeDocks`                                          | int(3)                                   |          |           |          | Number of free docks                                                             |
 | `velibStaMonitoring`                                         | boolean                                  |          | yes       |          | Monitoring?                                                                      |
