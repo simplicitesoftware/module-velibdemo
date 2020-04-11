@@ -53,6 +53,7 @@ There is one system parameters to configure:
 	<data>
 		<sys_code>VELIB_STATION_NAME_FILTER</sys_code>
 		<sys_value><![CDATA[gare]]></sys_value>
+		<sys_value2/>
 		<sys_type>APP</sys_type>
 		<sys_desc><![CDATA[Filter applied by default on station import/refresh]]></sys_desc>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>

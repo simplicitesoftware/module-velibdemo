@@ -28,6 +28,7 @@ components:
         velibStaCoordinates:
           description: Station coordinates
           type: string
+          example: latitude;longitude
         velibStaMonitoring:
           description: Monitoring?
           type: boolean
@@ -133,6 +134,7 @@ components:
         velibCmtDateTime:
           description: Date/time
           type: string
+          example: yyyy-MM-dd HH:mm:ss
         row_id:
           description: Unique technical row ID
           type: string

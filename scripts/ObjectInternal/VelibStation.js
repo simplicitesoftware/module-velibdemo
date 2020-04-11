@@ -44,9 +44,10 @@ VelibStation.refresh = function(params) {
 		if (errs == null || errs.size() == 0) {
 			var err = sta.save();
 			if (err != null) console.error(err);
-		} else
+		} else {
 			for (var k = 0; k < errs.size(); k++)
 				console.error(errs.get(k));
+		}
 	}
 
 	this.getGrant().delAccessCreate(this.getName());
