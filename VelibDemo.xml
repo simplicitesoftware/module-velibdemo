@@ -2052,7 +2052,7 @@ There is one system parameters to configure:
 		<res_cached>0</res_cached>
 		<res_file/>
 		<res_file_compiled/>
-		<res_image>resources/Disposition/default/velibdemo-module.png</res_image>
+		<res_image>resources/Disposition/default/velibdemo-module.svg</res_image>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -2066,11 +2066,11 @@ There is one system parameters to configure:
 		</res_object>
 		<res_type>IMG</res_type>
 		<res_lang>ANY</res_lang>
-		<res_code>velibdemo-module-full</res_code>
+		<res_code>velibdemo-module-screenshot</res_code>
 		<res_cached>1</res_cached>
 		<res_file/>
 		<res_file_compiled/>
-		<res_image>resources/Disposition/default/velibdemo-module-full.png</res_image>
+		<res_image>resources/Disposition/default/velibdemo-module-screenshot.png</res_image>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
 	</data>
 </object>
