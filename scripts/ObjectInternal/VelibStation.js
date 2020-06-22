@@ -38,7 +38,7 @@ VelibStation.refresh = function(params) {
 		sta.setFieldValue("velibStaBikes", fields.getInt("numbikesavailable"));
 		sta.setFieldValue("velibStaFreeDocks", fields.getInt("capacity") - fields.getInt("numbikesavailable"));
 		var p = geometry.getJSONArray("coordinates");
-		sta.setFieldValue("velibStaCoordinates", p.get(0) + ";" + p.get(1));
+		sta.setFieldValue("velibStaCoordinates", p.get(1) + ";" + p.get(0));
 		var errs = sta.validate();
 		if (errs == null || errs.size() == 0) {
 			var err = sta.save();
