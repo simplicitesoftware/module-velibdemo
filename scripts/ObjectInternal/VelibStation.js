@@ -5,7 +5,7 @@ VelibStation.refresh = function(params) {
 	sta.setAllFieldsUpdatable(true);
 	sta.resetFilters();
 
-	var url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=velib-disponibilite-en-temps-reel&facet=overflowactivation&facet=creditcard&facet=kioskstate&facet=station_state&" + params;
+	var url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=velib-disponibilite-en-temps-reel&" + params;
 	var data = Tool.readUrl(url);
 
 	this.getGrant().addAccessCreate(this.getName());
@@ -16,9 +16,9 @@ VelibStation.refresh = function(params) {
 	var records = res.getJSONArray("records");
 	for (var i = 0; i < nhits; i++) {
 		var fields = records.get(i).getJSONObject("fields");
-		//console.log(fields.toString(2));
+		var geometry = records.get(i).getJSONObject("geometry");
 
-		var code = fields.get("station_code");
+		var code = fields.get("stationcode");
 
 		var rowId = this.getGrant().simpleQuery("select row_id from velib_station where code = '" + code + "'");
 		if (Tool.isEmpty(rowId)) {
@@ -32,13 +32,12 @@ VelibStation.refresh = function(params) {
 		}
 
 		sta.setFieldValue("velibStaCode", code);
-		sta.setFieldValue("velibStaName", fields.get("station_name"));
-		var status = fields.get("station_state").replace(" ", "").toUpperCase();
-		console.log("Station status: " + status);
+		sta.setFieldValue("velibStaName", fields.get("name"));
+		var status = fields.optString("state", "OPERATIVE").replace(" ", "").toUpperCase();
 		sta.setFieldValue("velibStaStatus", status);
-		sta.setFieldValue("velibStaBikes", fields.getInt("nbbike") + fields.getInt("nbebike"));
-		sta.setFieldValue("velibStaFreeDocks", fields.getInt("nbfreedock") + fields.getInt("nbfreeedock"));
-		var p = fields.getJSONArray("geo");
+		sta.setFieldValue("velibStaBikes", fields.getInt("numbikesavailable"));
+		sta.setFieldValue("velibStaFreeDocks", fields.getInt("capacity") - fields.getInt("numbikesavailable"));
+		var p = geometry.getJSONArray("coordinates");
 		sta.setFieldValue("velibStaCoordinates", p.get(0) + ";" + p.get(1));
 		var errs = sta.validate();
 		if (errs == null || errs.size() == 0) {
@@ -61,11 +60,11 @@ VelibStation.refreshAll = function() {
 		for (var i = 0; i < rowIds.size(); i++) {
 			var rowId = rowIds.get(i);
 			var code = this.getGrant().simpleQuery("select code from velib_station where row_id = " + rowId);
-			VelibStation.refresh.call(this, "q=" + HTTPTool.encode("station_code=" + code));
+			VelibStation.refresh.call(this, "q=" + HTTPTool.encode("stationcode=" + code));
 		}
 	} else {
 		var nameFilter = this.getGrant().getParameter("VELIB_STATION_NAME_FILTER");
-		VelibStation.refresh.call(this, "rows=1000&q=" + HTTPTool.encode("station_name=" + nameFilter));
+		VelibStation.refresh.call(this, "rows=1000&q=" + HTTPTool.encode("name=" + nameFilter));
 	}
 };
 
@@ -81,7 +80,7 @@ VelibStation.refreshMonitored = function() {
 	var rows = sta.search();
 	for (var i = 0; i < rows.size(); i++) {
 		var row = rows.get(i);
-		VelibStation.refresh.call(this, "q=" + HTTPTool.encode("station_code=" + row[idx]));
+		VelibStation.refresh.call(this, "q=" + HTTPTool.encode("stationcode=" + row[idx]));
 	}
 };
 

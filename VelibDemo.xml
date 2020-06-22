@@ -92,6 +92,7 @@ There is one system parameters to configure:
 		<thm_menu_sact_t/>
 		<thm_menu_sta_c/>
 		<thm_menu_sta_t/>
+		<thm_compact/>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
 	</data>
 </object>
@@ -329,7 +330,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>11</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>0</fld_copy>
 		<fld_size>4000</fld_size>
@@ -366,7 +366,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>5</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>0</fld_copy>
 		<fld_size>19</fld_size>
@@ -403,7 +402,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>1</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>1</fld_copy>
 		<fld_size>1</fld_size>
@@ -440,7 +438,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>3</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>0</fld_copy>
 		<fld_size>100</fld_size>
@@ -477,7 +474,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>0</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>1</fld_copy>
 		<fld_size>11</fld_size>
@@ -514,7 +510,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>8</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>1</fld_copy>
 		<fld_size>1</fld_size>
@@ -551,7 +546,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>1</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>1</fld_copy>
 		<fld_size>3</fld_size>
@@ -588,7 +582,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>3</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>1</fld_copy>
 		<fld_size>11</fld_size>
@@ -625,7 +618,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>11</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>1</fld_copy>
 		<fld_size>4000</fld_size>
@@ -662,7 +654,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>25</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>1</fld_copy>
 		<fld_size>50</fld_size>
@@ -699,7 +690,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>1</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>1</fld_copy>
 		<fld_size>3</fld_size>
@@ -736,7 +726,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>8</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>0</fld_copy>
 		<fld_size>1</fld_size>
@@ -773,7 +762,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>3</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>1</fld_copy>
 		<fld_size>100</fld_size>
@@ -810,7 +798,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>1</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist/>
 		<fld_list_id.lov_name/>
 		<fld_copy>1</fld_copy>
 		<fld_size>11</fld_size>
@@ -847,7 +834,6 @@ There is one system parameters to configure:
 		<fld_tray>0</fld_tray>
 		<fld_type>7</fld_type>
 		<fld_type_id.flt_code/>
-		<fld_enumlist>VELIB_STA_STATUS</fld_enumlist>
 		<fld_list_id.lov_name>VELIB_STA_STATUS</fld_list_id.lov_name>
 		<fld_copy>1</fld_copy>
 		<fld_size>50</fld_size>
