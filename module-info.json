@@ -1,0 +1,9 @@
+{
+    "date": "2021-03-12 18:11:54",
+    "name": "VelibDemo",
+    "format": "xml",
+    "files": ["VelibDemo.xml"],
+    "repository": {},
+    "version": "5",
+    "platform": "5.2.0-alpha"
+}

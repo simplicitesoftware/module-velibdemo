@@ -43,25 +43,6 @@ There is one system parameters to configure:
 
 - The `VELIB_STATION_NAME_FILTER` in which you must set the name filtering you want to apply on stations
 
-
-`VelibComment` business object definition
------------------------------------------
-
-
-
-### Fields
-
-| Name                                                         | Type                                     | Required | Updatable | Personal | Description                                                                      | 
-| ------------------------------------------------------------ | ---------------------------------------- | -------- | --------- | -------- | -------------------------------------------------------------------------------- |
-| `velibCmtDateTime`                                           | datetime                                 | yes*     |           |          | Date/time                                                                        |
-| `velibCmtName`                                               | char(100)                                |          | yes       |          | Name                                                                             |
-| `velibCmtStaId` link to **`VelibStation`**                   | id                                       |          | yes       |          | Station                                                                          |
-| _Ref. `velibCmtStaId.velibStaCode`_                          | _char(11)_                               |          |           |          | _Station code_                                                                   |
-| _Ref. `velibCmtStaId.velibStaName`_                          | _char(100)_                              |          |           |          | _Station name_                                                                   |
-| `velibCmtEval`                                               | int(1)                                   |          | yes       |          | Evaluation                                                                       |
-| `velibCmtComments`                                           | html(4000)                               |          | yes       |          | Comments                                                                         |
-| `velibCmtVisible`                                            | boolean                                  |          | yes       |          | Visible?                                                                         |
-
 `VelibStation` business object definition
 -----------------------------------------
 
@@ -69,8 +50,8 @@ There is one system parameters to configure:
 
 ### Fields
 
-| Name                                                         | Type                                     | Required | Updatable | Personal | Description                                                                      | 
-| ------------------------------------------------------------ | ---------------------------------------- | -------- | --------- | -------- | -------------------------------------------------------------------------------- |
+| Name                                                         | Type                                     | Required | Updatable | Personal | Description                                                                      |
+|--------------------------------------------------------------|------------------------------------------|----------|-----------|----------|----------------------------------------------------------------------------------|
 | `velibStaCode`                                               | char(11)                                 | yes*     |           |          | Station code                                                                     |
 | `velibStaName`                                               | char(100)                                |          |           |          | Station name                                                                     |
 | `velibStaCoordinates`                                        | geocoords                                |          |           |          | Station coordinates                                                              |
@@ -93,4 +74,22 @@ There is one system parameters to configure:
 * `VELIB_REFRESH_ALL`: Refresh all stations
 * `VELIB_REFRESH_MONITORED`: Refresh monitored stations
 * `VELIB_REFRESH_ONE`: Refresh one station
+
+`VelibComment` business object definition
+-----------------------------------------
+
+
+
+### Fields
+
+| Name                                                         | Type                                     | Required | Updatable | Personal | Description                                                                      |
+|--------------------------------------------------------------|------------------------------------------|----------|-----------|----------|----------------------------------------------------------------------------------|
+| `velibCmtDateTime`                                           | datetime                                 | yes*     |           |          | Date/time                                                                        |
+| `velibCmtName`                                               | char(100)                                |          | yes       |          | Name                                                                             |
+| `velibCmtStaId` link to **`VelibStation`**                   | id                                       |          | yes       |          | Station                                                                          |
+| _Ref. `velibCmtStaId.velibStaCode`_                          | _char(11)_                               |          |           |          | _Station code_                                                                   |
+| _Ref. `velibCmtStaId.velibStaName`_                          | _char(100)_                              |          |           |          | _Station name_                                                                   |
+| `velibCmtEval`                                               | int(1)                                   |          | yes       |          | Evaluation                                                                       |
+| `velibCmtComments`                                           | html(4000)                               |          | yes       |          | Comments                                                                         |
+| `velibCmtVisible`                                            | boolean                                  |          | yes       |          | Visible?                                                                         |
 
