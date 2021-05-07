@@ -92,6 +92,7 @@ There is one system parameters to configure:
 		<thm_menu_sta_t/>
 		<thm_compact>0</thm_compact>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
+		<thm_const/>
 	</data>
 </object>
 <object>
@@ -326,7 +327,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum/>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>11</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -363,7 +364,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum/>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>5</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -400,7 +401,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum/>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>1</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -437,7 +438,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum/>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>3</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -474,7 +475,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum/>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>0</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -511,7 +512,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum/>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>8</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -548,7 +549,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum>1</fld_listsum>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>1</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -585,7 +586,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum>0</fld_listsum>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>3</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -622,7 +623,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum>0</fld_listsum>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>11</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -659,7 +660,7 @@ There is one system parameters to configure:
 		<fld_more>1</fld_more>
 		<fld_listmore>1</fld_listmore>
 		<fld_listsum>0</fld_listsum>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>25</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -696,7 +697,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum>0</fld_listsum>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>1</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -733,7 +734,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum>0</fld_listsum>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>8</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -770,7 +771,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum>0</fld_listsum>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>3</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -807,7 +808,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum>0</fld_listsum>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>1</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name/>
@@ -844,7 +845,7 @@ There is one system parameters to configure:
 		<fld_more>0</fld_more>
 		<fld_listmore>0</fld_listmore>
 		<fld_listsum>0</fld_listsum>
-		<fld_tray/>
+		<fld_tray>0</fld_tray>
 		<fld_type>7</fld_type>
 		<fld_type_id.flt_code/>
 		<fld_list_id.lov_name>VELIB_STA_STATUS</fld_list_id.lov_name>
@@ -1060,7 +1061,7 @@ There is one system parameters to configure:
 		<obo_btn_export>P</obo_btn_export>
 		<obo_btn_listadd>1</obo_btn_listadd>
 		<obo_btn_listedit>1</obo_btn_listedit>
-		<obo_btn_listupsert/>
+		<obo_btn_listupsert>1</obo_btn_listupsert>
 		<obo_btn_updall>P</obo_btn_updall>
 		<obo_btn_delall>P</obo_btn_delall>
 		<obo_btn_merge>P</obo_btn_merge>
@@ -1075,6 +1076,8 @@ There is one system parameters to configure:
 		<obo_search_ts/>
 		<obo_minrows/>
 		<obo_maxrows/>
+		<obo_sortable>1</obo_sortable>
+		<obo_list_areas>1</obo_list_areas>
 	</data>
 	<data>
 		<obo_name>VelibStation</obo_name>
@@ -1124,7 +1127,7 @@ There is one system parameters to configure:
 		<obo_btn_export>P</obo_btn_export>
 		<obo_btn_listadd>1</obo_btn_listadd>
 		<obo_btn_listedit>1</obo_btn_listedit>
-		<obo_btn_listupsert/>
+		<obo_btn_listupsert>1</obo_btn_listupsert>
 		<obo_btn_updall>P</obo_btn_updall>
 		<obo_btn_delall>P</obo_btn_delall>
 		<obo_btn_merge>P</obo_btn_merge>
@@ -1139,6 +1142,8 @@ There is one system parameters to configure:
 		<obo_search_ts/>
 		<obo_minrows/>
 		<obo_maxrows/>
+		<obo_sortable>1</obo_sortable>
+		<obo_list_areas>1</obo_list_areas>
 	</data>
 </object>
 <object>
@@ -1965,7 +1970,7 @@ There is one system parameters to configure:
 		<map_object_id.obj_name>VelibStation</map_object_id.obj_name>
 		<map_process_id.pcs_name/>
 		<map_order>71000</map_order>
-		<map_ext/>
+		<map_ext>0</map_ext>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -1973,7 +1978,7 @@ There is one system parameters to configure:
 		<map_object_id.obj_name>VelibComment</map_object_id.obj_name>
 		<map_process_id.pcs_name/>
 		<map_order>71010</map_order>
-		<map_ext/>
+		<map_ext>0</map_ext>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
 	</data>
 </object>
@@ -1993,6 +1998,7 @@ There is one system parameters to configure:
 		<vwi_show/>
 		<vwi_url/>
 		<vwi_image/>
+		<vwi_treeview_id.trv_name/>
 		<vwi_crosstab_id.ctb_name/>
 		<vwi_printtmpl_id.prt_name/>
 		<vwi_printtmpl_id.prt_lang/>
