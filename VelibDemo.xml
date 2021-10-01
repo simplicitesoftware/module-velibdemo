@@ -13,7 +13,7 @@
 		"uri": "https://github.com/simplicitesoftware/module-velibdemo.git"
 	}
 }]]></mdl_url>
-		<mdl_lastupd>2020-02-28 12:55:08</mdl_lastupd>
+		<mdl_type>A</mdl_type>
 		<mdl_comment><![CDATA[[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=simplicite-modules-VelibDemo&metric=alert_status)](https://sonarcloud.io/dashboard?id=simplicite-modules-VelibDemo)
 
 ### Introduction
@@ -74,7 +74,6 @@ There is one system parameters to configure:
 		<thm_color3>#ffe433</thm_color3>
 		<thm_text3/>
 		<thm_base>light</thm_base>
-		<thm_css_doc>files/Theme/velib/velib_gen.css</thm_css_doc>
 		<thm_addon/>
 		<thm_searchbox/>
 		<thm_active/>
@@ -265,7 +264,6 @@ There is one system parameters to configure:
 	<data>
 		<lov_code_id.lov_list_id.lov_name>VELIB_STA_STATUS</lov_code_id.lov_list_id.lov_name>
 		<lov_code_id.lov_code>OPERATIVE</lov_code_id.lov_code>
-		<lov_code_id.lov_order_by>1</lov_code_id.lov_order_by>
 		<lov_lang>ENU</lov_lang>
 		<lov_value><![CDATA[Operative]]></lov_value>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
@@ -273,7 +271,6 @@ There is one system parameters to configure:
 	<data>
 		<lov_code_id.lov_list_id.lov_name>VELIB_STA_STATUS</lov_code_id.lov_list_id.lov_name>
 		<lov_code_id.lov_code>WORKINPROGRESS</lov_code_id.lov_code>
-		<lov_code_id.lov_order_by>2</lov_code_id.lov_order_by>
 		<lov_lang>ENU</lov_lang>
 		<lov_value><![CDATA[Work in progress]]></lov_value>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
@@ -281,7 +278,6 @@ There is one system parameters to configure:
 	<data>
 		<lov_code_id.lov_list_id.lov_name>VELIB_STA_STATUS</lov_code_id.lov_list_id.lov_name>
 		<lov_code_id.lov_code>CLOSE</lov_code_id.lov_code>
-		<lov_code_id.lov_order_by>3</lov_code_id.lov_order_by>
 		<lov_lang>ENU</lov_lang>
 		<lov_value><![CDATA[Closed]]></lov_value>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
@@ -289,7 +285,6 @@ There is one system parameters to configure:
 	<data>
 		<lov_code_id.lov_list_id.lov_name>VELIB_STA_STATUS</lov_code_id.lov_list_id.lov_name>
 		<lov_code_id.lov_code>OPERATIVE</lov_code_id.lov_code>
-		<lov_code_id.lov_order_by>1</lov_code_id.lov_order_by>
 		<lov_lang>FRA</lov_lang>
 		<lov_value><![CDATA[En fonctionnement]]></lov_value>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
@@ -297,7 +292,6 @@ There is one system parameters to configure:
 	<data>
 		<lov_code_id.lov_list_id.lov_name>VELIB_STA_STATUS</lov_code_id.lov_list_id.lov_name>
 		<lov_code_id.lov_code>WORKINPROGRESS</lov_code_id.lov_code>
-		<lov_code_id.lov_order_by>2</lov_code_id.lov_order_by>
 		<lov_lang>FRA</lov_lang>
 		<lov_value><![CDATA[En travaux]]></lov_value>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
@@ -305,7 +299,6 @@ There is one system parameters to configure:
 	<data>
 		<lov_code_id.lov_list_id.lov_name>VELIB_STA_STATUS</lov_code_id.lov_list_id.lov_name>
 		<lov_code_id.lov_code>CLOSE</lov_code_id.lov_code>
-		<lov_code_id.lov_order_by>3</lov_code_id.lov_order_by>
 		<lov_lang>FRA</lov_lang>
 		<lov_value><![CDATA[Fermée]]></lov_value>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
@@ -1016,6 +1009,7 @@ There is one system parameters to configure:
 	<data>
 		<obo_name>VelibComment</obo_name>
 		<obo_dbtable>velib_comment</obo_dbtable>
+		<obo_role>OBJ</obo_role>
 		<obo_class/>
 		<obo_script_id/>
 		<obo_usets>1</obo_usets>
@@ -1082,6 +1076,7 @@ There is one system parameters to configure:
 	<data>
 		<obo_name>VelibStation</obo_name>
 		<obo_dbtable>velib_station</obo_dbtable>
+		<obo_role>OBJ</obo_role>
 		<obo_class/>
 		<obo_script_id>scripts/ObjectInternal/VelibStation.js</obo_script_id>
 		<obo_usets>1</obo_usets>
@@ -2046,7 +2041,6 @@ There is one system parameters to configure:
 		<res_code>velib</res_code>
 		<res_cached>1</res_cached>
 		<res_file/>
-		<res_file_compiled/>
 		<res_image>resources/Disposition/default/velib.png</res_image>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
 	</data>
@@ -2064,7 +2058,6 @@ There is one system parameters to configure:
 		<res_code>velibdemo-module</res_code>
 		<res_cached>0</res_cached>
 		<res_file/>
-		<res_file_compiled/>
 		<res_image>resources/Disposition/default/velibdemo-module.svg</res_image>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
 	</data>
@@ -2082,7 +2075,6 @@ There is one system parameters to configure:
 		<res_code>velibdemo-module-screenshot</res_code>
 		<res_cached>1</res_cached>
 		<res_file/>
-		<res_file_compiled/>
 		<res_image>resources/Disposition/default/velibdemo-module-screenshot.png</res_image>
 		<row_module_id.mdl_name>VelibDemo</row_module_id.mdl_name>
 	</data>
