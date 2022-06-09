@@ -83,7 +83,3 @@ VelibStation.refreshMonitored = function() {
 		VelibStation.refresh.call(this, "q=" + HTTPTool.encode("stationcode=" + row[idx]));
 	}
 };
-
-VelibStation.isHistoric = function() {
-	return this.getField("velibStaMonitoring").getBoolean(false);
-};
