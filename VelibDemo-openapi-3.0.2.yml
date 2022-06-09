@@ -16,6 +16,82 @@ components:
           type: integer
           enum:
           - 404
+    ArrayOfVelibStation:
+      type: array
+      items:
+        $ref: '#/components/schemas/VelibStation'
+    PublicationResult:
+      type: object
+      properties:
+        mime:
+          description: MIME type
+          type: string
+        content:
+          description: Content (plain text or base64 encoded)
+          type: string
+    PlaceData:
+      type: object
+      properties:
+        coord:
+          description: Geographical coordinates
+          type: string
+        address:
+          description: Address
+          type: string
+        row_id:
+          description: Row ID
+          type: string
+        label1:
+          description: 'Label #1'
+          type: string
+        label2:
+          description: 'Label #2'
+          type: string
+        label3:
+          description: 'Label #3'
+          type: string
+    PlaceMapData:
+      type: object
+      properties:
+        places:
+          description: Places
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaceData'
+        name:
+          description: Name
+          type: string
+    VelibComment:
+      type: object
+      properties:
+        velibCmtEval:
+          description: Evaluation
+          type: integer
+        velibCmtStaId__velibStaCode:
+          description: Station code
+          type: string
+        velibCmtName:
+          description: Name
+          type: string
+        velibCmtComments:
+          description: Comments
+          type: string
+        velibCmtDateTime:
+          description: Date/time
+          type: string
+          example: yyyy-MM-dd HH:mm:ss
+        row_id:
+          description: Unique technical row ID
+          type: string
+        velibCmtVisible:
+          description: Visible?
+          type: boolean
+        velibCmtStaId__velibStaName:
+          description: Station name
+          type: string
+        velibCmtStaId:
+          description: Station
+          type: string
     VelibStation:
       type: object
       properties:
@@ -60,25 +136,12 @@ components:
         result:
           description: Action result
           type: string
-    ArrayOfVelibStation:
-      type: array
-      items:
-        $ref: '#/components/schemas/VelibStation'
     TreeviewData:
       type: object
       properties:
         item:
           description: Object item with lists of linked objects' items
           type: object
-    PublicationResult:
-      type: object
-      properties:
-        mime:
-          description: MIME type
-          type: string
-        content:
-          description: Content (plain text or base64 encoded)
-          type: string
     Error400:
       type: object
       properties:
@@ -116,37 +179,6 @@ components:
           type: integer
           enum:
           - 500
-    VelibComment:
-      type: object
-      properties:
-        velibCmtEval:
-          description: Evaluation
-          type: integer
-        velibCmtStaId__velibStaCode:
-          description: Station code
-          type: string
-        velibCmtName:
-          description: Name
-          type: string
-        velibCmtComments:
-          description: Comments
-          type: string
-        velibCmtDateTime:
-          description: Date/time
-          type: string
-          example: yyyy-MM-dd HH:mm:ss
-        row_id:
-          description: Unique technical row ID
-          type: string
-        velibCmtVisible:
-          description: Visible?
-          type: boolean
-        velibCmtStaId__velibStaName:
-          description: Station name
-          type: string
-        velibCmtStaId:
-          description: Station
-          type: string
     Error403:
       type: object
       properties:
@@ -313,6 +345,46 @@ paths:
         required: false
       tags:
       - VelibComment
+  /rest/VelibStation/{row_id}/placemap:VelibStations:
+    get:
+      summary: Call a place map for VelibStation business object
+      security:
+      - bearerAuth: []
+      operationId: obj-velibstation-placemap-velibstations
+      responses:
+        '200':
+          description: Success in calling the place map adat
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaceMapData'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: Row ID (or empty or _ for all row IDs)
+        required: true
+      tags:
+      - VelibStation
   /rest/VelibComment/{row_id}:
     post:
       summary: Create a new VelibCommentbusiness object record
